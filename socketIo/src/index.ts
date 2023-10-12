@@ -39,11 +39,11 @@ io.on("connection", (socket) => {
     /* 関数定義 */
     // クライアントからメッセージを受け取った際の処理
     function getMessageFromClient(message: string){
-        console.log(`from client: ${message}`); // クライアントから受け取ったメッセージをログに出力
+        console.log(`${socket.id}: ${message}`); // クライアントから受け取ったメッセージをログに出力
 
         // クライアントから受け取ったメッセージを、クライアント全体に送信
-        const newMessage: string = `from ${socket.id}` + "\n" + message;
-        socket.emit("responseMessage", newMessage);
+        const newMessage: string = `${socket.id}: ${message}`;
+        socket.broadcast.emit("responseMessage", newMessage);
     };
 });
 
