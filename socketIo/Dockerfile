@@ -8,9 +8,6 @@ COPY ./package.json /work/
 COPY ./package-lock.json /work/
 RUN npm install
 
-# プログラムに必要なファイルをコピーする
-COPY ./firebase /work/dist/firebase/
-
 # TypeScript コードをコピーしてビルド
 COPY ./tsconfig.json /work/
 COPY ./src /work/
