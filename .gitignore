@@ -1,2 +1,3 @@
 socketIo/dist/
 socketIo/node_modules/
+.vscode/
